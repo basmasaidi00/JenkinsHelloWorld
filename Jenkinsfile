@@ -1,10 +1,14 @@
 pipeline {
     agent any
+
     stages {
         stage('Build') {
             steps {
-                sh 'javac HelloWorld.java'
-                sh 'java HelloWorld'
+                // Compiler le fichier Java
+                bat 'javac HelloWorld.java'
+
+                // Exécuter le fichier Java
+                bat 'java HelloWorld'
             }
         }
     }
